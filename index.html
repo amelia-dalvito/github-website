@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,118 +10,123 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 </head>
+
 <body>
 
-<div class="container">
-  <div class="navigation">
-    <div class="logo">Amelia Dalvito</div>
-    <a href="#home">Home</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <div class="container">
+    <div class="navigation">
+      <div class="logo">Amelia Dalvito</div>
+      <a href="#home">Home</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-  <div class="header" id="home">
-    <div class="header-content">
-      <div class="text-section">
-        <h1>I'm Amelia Dalvito</h1>
-        <p>A Computer Science major at Barnard College</p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/amelia-dalvito-718287279/" class="social-link">LinkedIn</a>
-          <a href="https://github.com/amelia-dalvito" class="social-link">GitHub</a>
+    <div class="header" id="home">
+      <div class="header-content">
+        <div class="text-section">
+          <h1>Hi, I'm Amelia Dalvito</h1>
+          <p>A Computer Science major at Barnard College</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/amelia-dalvito-718287279/" class="social-link">LinkedIn</a>
+            <a href="https://github.com/amelia-dalvito" class="social-link">GitHub</a>
+          </div>
+        </div>
+        <div class="photo-section">
+          <img src="profile-picture.jpg" alt="Amelia Dalvito">
         </div>
       </div>
-      <div class="photo-section">
-        <img src="profile-picture.jpg" alt="Amelia Dalvito">
+    </div>
+
+    <div class="section" id="experience">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <h3>Software Engineering Intern</h3>
+        <p>HaiLa Technologies, Montreal, QC (2023-2024)</p>
+        <ul>
+          <li>Created a new UI feature that works with Haila's existing product interface.</li>
+          <li>Articulated innovative propositions and engaged in strategic consultations with company members.</li>
+          <li>API architecture work... </li>
+        </ul>
       </div>
     </div>
-  </div>
 
-  <div class="section" id="experience">
-    <h2>Experience</h2>
-    <div class="experience-item">
-      <h3>Software Engineering Intern</h3>
-      <p>HaiLa Technologies, Montreal, QC (2023-2024)</p>
-      <ul>
-        <li>Created a new UI feature that works with Haila's existing product interface.</li>
-        <li>Articulated innovative propositions and engaged in strategic consultations with company members.</li>
-        <li>API architecture work... </li>
-      </ul>
+    <div class="section" id="experience">
+      <h2>Skills</h2>
+      <div class="experience-item">
+        <h3>Python</h3>
+        <ul>
+          <li>Explanation...</li>
+        </ul>
+        <h3>JavaScript</h3>
+        <ul>
+          <li>Explanation...</li>
+        </ul>
+      </div>
     </div>
-  </div>
-  
-   <div class="section" id="experience">
-    <h2>Skills</h2>
-    <div class="experience-item">
-      <h3>Python</h3>
-      <p>Explanation...</p>
-      <ul>
-        <li>Explanation...</li>
-      </ul>
+
+    <div class="section" id="resume">
+      <h2>Resume</h2>
+      <div class="resume-container">
+        <iframe src="some-file" width="640" height="480"></iframe>
+      </div>
     </div>
-  </div>
 
-  <div class="section" id="resume">
-    <h2>Resume</h2>
-    <div class="resume-container">
-     <iframe src="some-file" width="640" height="480"></iframe>
+    <div class="section" id="contact">
+      <h2>Contact Me</h2>
+      <form class="contact-form" action="https://formsubmit.co/amelia.dalvito@gmail.com" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
+
+    <footer>
+      <div class="social-media">
+        <a href="https://www.linkedin.com/in/amelia-dalvito-718287279/">LinkedIn</a>
+        <a href="https://github.com/amelia-dalvito">GitHub</a>
+      </div>
+    </footer>
   </div>
 
-  <div class="section" id="contact">
-    <h2>Contact Me</h2>
-    <form class="contact-form" action="https://formsubmit.co/amelia.dalvito@gmail.com" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" placeholder="Your Name" required>
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" placeholder="Your Email" required>
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
+  <script>
+    $(document).ready(function () {
+      gsap.registerPlugin(ScrollTrigger);
 
-  <footer>
-    <div class="social-media">
-      <a href="https://www.linkedin.com/in/amelia-dalvito-718287279/">LinkedIn</a>
-      <a href="https://github.com/amelia-dalvito">GitHub</a>
-    </div>
-  </footer>
-</div>
+      $('.navigation a').on('click', function (event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+            window.location.hash = hash;
+          });
+        }
+      });
 
-<script>
-  $(document).ready(function() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    $('.navigation a').on('click', function(event) {
-      if (this.hash !== "") {
-        event.preventDefault();
-        var hash = this.hash;
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-          window.location.hash = hash;
-        });
-      }
+      gsap.from(".header h1", { duration: 1, y: -50, opacity: 0 });
+      gsap.from(".header p", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
+      gsap.from(".navigation a", { duration: 1, x: -100, opacity: 0, stagger: 0.2 });
+      gsap.from(".section", {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".section",
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      });
     });
-
-    gsap.from(".header h1", { duration: 1, y: -50, opacity: 0 });
-    gsap.from(".header p", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
-    gsap.from(".navigation a", { duration: 1, x: -100, opacity: 0, stagger: 0.2 });
-    gsap.from(".section", { 
-      duration: 1, 
-      y: 50, 
-      opacity: 0, 
-      stagger: 0.3, 
-      scrollTrigger: {
-        trigger: ".section",
-        start: "top 80%",
-        toggleActions: "play none none none"
-      }
-    });
-  });
-</script>
+  </script>
 
 </body>
+
 </html>
