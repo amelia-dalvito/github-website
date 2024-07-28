@@ -2,8 +2,9 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #00ACC1, #006064);
-    color: #0097A7;
+    background: linear-gradient(135deg, #a9e2e5, #006064);
+    /* 00ACC1 a9e2e5 */
+    color: #f4f4f4;
     overflow-x: hidden;
     min-height: 100vh;
     display: flex;
@@ -49,7 +50,7 @@ body {
     justify-content: center;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(135deg, #2b1055, #7597de);
+    background: linear-gradient(135deg, #00ACC1, #7597de);
     color: white;
     text-align: left;
     position: relative;
@@ -87,21 +88,21 @@ body {
 
 .header-content .social-link {
     padding: 10px 20px;
-    background-color: #006064;
-    border-radius: 5px;
+    background-color: #4fc4ca;
+    border-radius: 5px;  
     color: white;
     text-decoration: none;
     transition: background-color 0.3s;
 }
 
 .header-content .social-link:hover {
-    background-color: #2b1055;
+    background-color: #006064;
 }
 
 .header-content .photo-section img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
 }
 
@@ -149,7 +150,7 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #4fc4ca;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
