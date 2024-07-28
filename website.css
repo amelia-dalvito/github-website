@@ -1,3 +1,5 @@
+/*colors: DEF9C4 7597de-blue 
+*/
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -49,8 +51,8 @@ body {
     justify-content: center;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(135deg, #468585, #7597de);
-    color: white;
+    background: linear-gradient(135deg, #9CDBA6,#468585);
+    color: white; 
     text-align: left;
     position: relative;
     padding: 0 20px;
@@ -87,7 +89,7 @@ body {
 
 .header-content .social-link {
     padding: 10px 20px;
-    background-color: #50B498;
+    background-color: #47947e;
     border-radius: 5px;  
     color: white;
     text-decoration: none;
@@ -125,6 +127,10 @@ body {
     text-align: center;
 }
 
+.experience-item ul{
+    text-align: left;
+}
+
 .resume-container iframe {
     margin: 0 auto;
     display: block;
@@ -149,14 +155,14 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #4fc4ca;
+    background-color: #50B498;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .contact-form button:hover {
-    background-color: #0056b3;
+    background-color: #468585;
 }
 
 footer {
@@ -173,5 +179,5 @@ footer .social-media a {
 }
 
 footer .social-media a:hover {
-    color: #007bff;
+    color: #50B498;
 }
