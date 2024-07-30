@@ -2,7 +2,7 @@ let jellyfish1;
 let jellyfish2;
 let jellyfish3;
 let jellyfish4;
-
+let buttonClicked = false; //disco button
 
 
 function setup() {
@@ -14,10 +14,35 @@ function setup() {
     jellyfish3 = new Jellyfish();
     jellyfish4 = new Jellyfish();
 
+    // Disco mode button set-up
+    const button = select('#corner-button');
+    button.mousePressed(handleButtonClick);
+
 }
+//DISCO function ---
+function handleButtonClick() {
+    buttonClicked = !buttonClicked; // Toggle the flag
+    jellyfish1.discoMode = buttonClicked;
+    jellyfish2.discoMode = buttonClicked;
+    jellyfish3.discoMode = buttonClicked;
+    jellyfish4.discoMode = buttonClicked;
+}// end of function
 
 function draw() {
     clear(); // Clears the canvas and makes it transparent
+
+    //Disco Mode 
+    if (buttonClicked) {
+        for (let x = 0; x <= width; x += 50) {
+            for (let y = 0; y <= height; y += 50) {
+                fill(random(255), 100, random(255), 50);
+                ellipse(x, y, 25, 25);
+                noStroke();
+            }
+        }
+    }
+
+    //Jellyfish ----
     jellyfish1.update();
     jellyfish1.display();
 
@@ -30,19 +55,42 @@ function draw() {
     jellyfish4.update();
     jellyfish4.display();
 
+}// end of draw
+
+class bubbles {
+    constructor() {
+
+    }
+
+    update() {
+
+    }
+
+    display() {
+
+    }
 }
 
+// This class creates a jellyfish 
 class Jellyfish {
     constructor() {
         this.i = 0;
         this.x = random(-width / 2, width / 2); // Initialize x position
-        this.y = random(height-50, -height); // Initialize y position to start from the bottom
-        this.speed=random(3,0);
+        this.y = random(height - 50, -height); // Initialize y position to start from the bottom
+        this.speed = random(3, .2);
+        this.discoMode = false; // Add this property
     }
 
     update() {
         this.i++;
-        this.y -= this.speed; // Move upwards by decreasing y position
+        // Changes speed for disco mode
+        if (this.discoMode) {
+            this.y -= this.speed * 3;
+        } 
+        else {
+            this.y -= this.speed; // Move upwards by decreasing y position
+
+        }
         if (this.y < -500) { // Reset position when it moves off-screen
             this.y = height - 50;
             this.x = random(-width / 2, width / 2)
@@ -65,6 +113,10 @@ class Jellyfish {
 
         translate(0, -150);
 
+        // DISCO MODE--------------------
+        if (this.discoMode) {
+            stroke(random(255), random(255), random(255), random(255));
+        }
         // Draw first set of shapes
         for (let angle = 1; angle <= 360; angle += 0.6) { //change .2 to make it faster
             const x = centerX + radius * cos(radians(angle));
@@ -72,12 +124,17 @@ class Jellyfish {
             const noiseStrokeR = noise(radians(angle));
             const noiseStrokeG = noise(this.i / 100);
             const noiseStrokeB = noise(radians(angle), this.i / 100);
-            stroke(
-                Math.round(255 * noiseStrokeR + 10),
-                Math.round(120 * noiseStrokeB + 40),
-                Math.round(255 * noiseStrokeG),
-                60
-            );
+            const increase1 = 10;//color increase for the stroke, origionally 10 and 40
+            const increase2 = 40;
+            if (this.discoMode == false) {
+                stroke(
+                    Math.round(255 * noiseStrokeR + increase1),
+                    Math.round(120 * noiseStrokeB + increase2),
+                    Math.round(255 * noiseStrokeG),
+                    60
+                );
+            }
+
             beginShape();
             const noiseY = noise(radius / 100) * 100;
             const noiseY2 = 50 - noise(radius / 100, this.i / 120) * 100;
@@ -97,12 +154,17 @@ class Jellyfish {
             const noiseStrokeR = noise(angle / 200);
             const noiseStrokeG = noise(this.i / 100);
             const noiseStrokeB = noise(angle / 200, this.i / 100);
-            stroke(
-                Math.round(255 * noiseStrokeR + 10),
-                Math.round(120 * noiseStrokeB + 40),
-                Math.round(255 * noiseStrokeG),
-                120
-            );
+            const increase1 = 10;//color increase for the stroke, origionally 10 and 40
+            const increase2 = 40;
+            if (this.discoMode == false) {
+                stroke(
+                    Math.round(255 * noiseStrokeR + increase1),
+                    Math.round(120 * noiseStrokeB + increase2),
+                    Math.round(255 * noiseStrokeG),
+                    120
+                );
+            }
+
             strokeWeight(2);
             beginShape();
             const noiseY = noise(radius / 100) * 100;
