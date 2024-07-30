@@ -42,7 +42,7 @@ body {
 }
 
 .navigation a:hover {
-    color: #007bff;
+    color:  #468585;
 }
 
 .header {
@@ -201,3 +201,20 @@ footer .social-media a:hover {
     position: relative;
   }
   
+  /* disco mode buttons*/
+  .corner-button {
+    position: absolute;
+    top: 60px; /* Adjust this value to move the button further down */
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #468585; /* Change the color as needed */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10; 
+  }
+  
+  .corner-button:hover {
+    background-color: #0ed1d1; /* Darker shade on hover */
+  }
