@@ -192,6 +192,17 @@ footer .social-media a:hover {
     z-index: 1; /* Adjust this as needed */
     pointer-events: none; /* Ensure interactions pass through */
   }
+
+  #p5-container-experience {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure it's under other content */
+    pointer-events: none; /* Allow interactions to pass through */
+}
+
   .header-content {
     position: relative;
     z-index: 2; /* Make sure header content is above the p5 container */
