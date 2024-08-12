@@ -86,8 +86,8 @@ class Bubbles {
         if (this.y < -this.size) { // Reset position when it moves off-screen
             this.y = height + this.size;
             this.x = random(width);
-            this.size = random(5, 10); // Randomize size upon reset
-            this.speed = random(1, 3); // Randomize speed upon reset
+            //this.size = random(5, 10); // Randomize size upon reset
+            //this.speed = random(1, 3); // Randomize speed upon reset
         }
     }
 
@@ -114,7 +114,7 @@ class Jellyfish {
         this.i++;
         // Changes speed for disco mode
         if (this.discoMode) {
-            this.y -= this.speed * 3;
+            this.y -= this.speed * 2;
         }
         else {
             this.y -= this.speed; // Move upwards by decreasing y position
@@ -147,7 +147,7 @@ class Jellyfish {
             stroke(random(255), random(255), random(255), random(255));
         }
         // Draw first set of shapes
-        for (let angle = 1; angle <= 360; angle += 0.6) { //change .2 to make it faster
+        for (let angle = 1; angle <= 360; angle += 0.4) { //change .2 to make it faster
             const x = centerX + radius * cos(radians(angle));
             const y = centerY + radius * sin(radians(angle)) + (200 - noise(radians(angle), this.i / 100) * 400);
             const noiseStrokeR = noise(radians(angle));
