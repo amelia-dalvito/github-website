@@ -107,7 +107,7 @@ class Jellyfish {
         this.x = random(-width / 2, width / 2); // Initialize x position
         this.y = random(height - 50, -height); // Initialize y position to start from the bottom
         this.speed = random(2, .2);
-        this.discoMode = false; // Add this property
+        this.discoMode = false; // checks if this mode is on
     }//---
 
     update() { // updates canvas
@@ -139,14 +139,14 @@ class Jellyfish {
         const radius = 200 * noise(this.i / 300) + 100;
         const radius2 = 20 * noise(this.i / 300) + 20;
 
-        translate(0, -150);
+        translate(0, -250);// why am I translating here????, was -150
 
         // DISCO MODE--------------------
         if (this.discoMode) {
             stroke(random(255), random(255), random(255), random(255));
         }
         // Draw first set of shapes
-        for (let angle = 1; angle <= 360; angle += 0.4) { //change .2 to make it faster, was .6 og
+        for (let angle = 1; angle <= 360; angle += 0.6) { //change .2 to make it faster, was .6 og
             const x = centerX + radius * cos(radians(angle));
             const y = centerY + radius * sin(radians(angle)) + (200 - noise(radians(angle), this.i / 100) * 400);
             const noiseStrokeR = noise(radians(angle));
@@ -207,7 +207,7 @@ class Jellyfish {
         }
 
         pop(); // Restore the previous drawing style settings and transformations
-    }
+    }//end of display function
 }
 
 function windowResized() {
