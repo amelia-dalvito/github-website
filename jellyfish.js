@@ -72,24 +72,25 @@ function draw() {
 
 }// end of draw
 
-//bubbles class
+//BUBBLES CLASS---------------
 class Bubbles {
     constructor() {
         this.x = random(width); // Initialize x position
         this.y = random(height); // Initialize y position
         this.size = random(5, 10); // Initialize size
-        this.speed = random(1, 3); // Initialize speed
+        this.speed = random(1, 2); // Initialize bubble speed range 
     }
 
     update() {
         this.y -= this.speed; // Move upwards by decreasing y position
+        
         if (this.y < -this.size) { // Reset position when it moves off-screen
             this.y = height + this.size;
             this.x = random(width);
             //this.size = random(5, 10); // Randomize size upon reset
             //this.speed = random(1, 3); // Randomize speed upon reset
         }
-    }
+    }//end of update for bubbles class 
 
     display() {
         push();
@@ -97,10 +98,10 @@ class Bubbles {
         fill(255, 100); // Semi-transparent white color
         ellipse(this.x, this.y, this.size, this.size); // Draw bubble
         pop();
-    }
+    }//end of display for bubbles class 
 }
 
-// This class creates a jellyfish 
+//JELLYFISH CLASS------------
 class Jellyfish {
     constructor() {
         this.i = 0;
@@ -108,7 +109,7 @@ class Jellyfish {
         this.y = random(height - 50, -height); // Initialize y position to start from the bottom
         this.speed = random(2, .2);
         this.discoMode = false; // checks if this mode is on
-    }//---
+    }//end of constructor 
 
     update() { // updates canvas
         this.i++;
