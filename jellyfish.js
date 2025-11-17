@@ -164,16 +164,15 @@ class Jellyfish {
                 );
             }
 
-            let tentacleOffset = 0; // increase to hang lower
 
             beginShape();
             const noiseY = noise(radius / 100) * 100;
             const noiseY2 = 50 - noise(radius / 100, this.i / 120) * 100;
             const noiseX = 500 - noise(radians(angle), this.i / 120) * 1000;
-            curveVertex(centerX, centerY + 200+tentacleOffset);
-            curveVertex(centerX, centerY - 120 + noiseY+tentacleOffset);
-            curveVertex(x, y / 10 + 500 + noiseY2+tentacleOffset);
-            curveVertex(x + noiseX, y / 10 + 1000+tentacleOffset);
+            curveVertex(centerX, centerY + 200);
+            curveVertex(centerX, centerY - 120 + noiseY);
+            curveVertex(x, y / 10 + 500 + noiseY2);
+            curveVertex(x + noiseX, y / 10 + 1000);
             endShape();
         }
 
