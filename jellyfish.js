@@ -164,7 +164,7 @@ class Jellyfish {
                 );
             }
 
-            let tentacleOffset = -10; // increase to hang lower
+            let tentacleOffset = 0; // increase to hang lower
 
             beginShape();
             const noiseY = noise(radius / 100) * 100;
